@@ -1,0 +1,118 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>在线计算器</title>
+		<script type="text/javascript" src="./js/setFontSize.js"></script>
+		<script src="./js/vue.min.js"></script>
+		<style>
+			body{background-color:#000;}
+			.wrap{position:absolute;top:10px;right:10px;bottom:10px;left:10px;}
+			.top-title{position:relative;width:100%;height:8vh;text-align:center;color:#fff;line-height:8vh;font-size:0.8rem;}
+			.result{position:relative;width:100%;height:16vh;
+			border-radius:5px;font-size:45px;line-height:16vh;text-align:right;white-space:nowrap;color:#333;			
+			background:linear-gradient(to bottom,#edefe0 45%,#babea2 80%);
+			}
+			table{width:100%; margin:10px auto;}
+			td{height:11vh;width:25%;border-radius:10px;text-align:center;line-height:11vh;
+			  font-size:0.8rem;cursor:pointer;color:#fff;
+			  background: #112232;
+			  box-shadow: inset 0 -15px 1px rgba(0,0,0,0.25), inset 0 1px 1px rgba(255,255,255,0.4), inset 0 6px 6px rgba(255,255,255,0.25);
+			/* background: linear-gradient(to bottom,#f00 45%,#0f0 80%); */
+			/* background-image: linear-gradient(rgb(255, 0, 0) 45%, rgb(0, 255, 0) 80%); */			    
+			}
+			
+			.first td,.first{background: #4A3B34;}
+			.equal{background:#ea6812;}
+			td:hover{background-image: linear-gradient(red, yellow, blue);color:green;}			
+		</style>
+
+<div id="app" class="wrap">
+			<div class="top-title" @click="changeModeEvent">
+				<span v-if="changeMode">简易版计算器   ⚈</span>
+				<span v-else>高级版计算器   ⚆</span>
+			</div>
+			<div class="result">{{ current }}</div>
+			<table v-if="changeMode">				 
+<tr class="first">
+					<td v-on:click="press">C</td>
+					<td v-on:click="press">☒</td>
+					<td v-on:click="press">*</td>
+					<td v-on:click="press">/</td>
+				</tr>
+				<tr>
+					<td v-on:click="press">7</td>
+					<td v-on:click="press">8</td>
+					<td v-on:click="press">9</td>
+					<td v-on:click="press" class="first">-</td>
+				</tr>
+				<tr>
+					<td v-on:click="press">4</td>
+					<td v-on:click="press">5</td>
+	<td v-on:click="press">6</td>
+	<td v-on:click="press" class="first">+</td>
+</tr>
+<tr>
+	<td v-on:click="press">1</td>
+	<td v-on:click="press">2</td>
+	<td v-on:click="press">3</td>
+	<td v-on:click="press" class="equal" rowspan="2">=</td>
+</tr>
+<tr>
+	<td v-on:click="press" colspan="2">0</td>
+	<td v-on:click="press">.</td>
+</tr>
+ 
+			</table>
+			<table v-else>
+				另一个计算器内容
+			</table>
+</div>
+<script>
+			var app = new Vue({
+			  el: '#app',
+			  data: {
+			    current:"",
+				changeMode: true
+			  },
+			  methods: {
+			      press:function (event) {
+			        let me = this;
+			     	let key = event.target.textContent;
+					// console.log(key);
+					if (key === 'C') {
+					    me.current = '';
+					}
+					if (key === '=') {
+						if(me.current!=""){
+							try{
+								me.current = eval(me.current);
+							}catch(e){
+								alert("您输入的式子有误");
+							}							
+						}						 
+					}
+					if (key === '%') {
+						me.current = me.current +"/100";
+					    // me.current = me.current / 100;
+					   }
+					if (key === '☒') {
+					    me.current = me.current.substring(0, me.current.length - 1);						
+					}
+					if(
+						key!="="&& key!="C"&&key!="%"&&	key!="☒"&&key != "sin" &&key != "cos" && 
+					    key != "tan" && 
+					    key != "log" && 
+					    key != "ln" && 
+					    key != "x^"
+					){
+						me.current += key
+					}
+					
+			  // alert(event.target.tagName);
+			  },
+			  changeModeEvent: function() {
+			     let me = this;
+			     me.changeMode = !me.changeMode;
+			    }
+			  }
+
+			})
+		</script>
