@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background: #242424;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.header-wrap {
+    width: 70%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.top-left {
+    float: left;
+    width: 168px;
+    height: 34px;
+    background: url(../image/logo.png) no-repeat;
+    background-position: 0 0;
+    margin-top: 17px;
+    /* 防止边界合并 */
+    padding-top: 1px;
+}
+
+.top-right {
+    width: 336px;
+    height: 46px;
+    margin-top: 12px;
+    float: right;
+    /* 浮动取消，方向，主轴对齐方式 */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search {
+    width: 135px;
+    height: 30px;
+    background: #fff;
+    border-radius: 15px;
+    background: url(../image/search.png) no-repeat, #fff;
+    background-position: 10px 5px;
+}
+
+.author {
+    width: 120px;
+    height: 30px;
+    border: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 15px;
+    font-size: 12px;
+}
+
+.login {
+    color: #fff;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 12px;
+}
+
+.menu {
+    margin-left: 175px;
+    margin-right: 360px;
+    height: 70px;
+}
+
+.menu ul {
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.menu ul li {
+    height: 100%;
+    width: calc(100%/7);
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    line-height: 70px;
+}
+
+.menu ul li:hover {
+    background-color: #000;
+}
+
+.active {
+    background-color: #000;
+    width: 100%;
+}
+
+.box {
+    width: 100%;
+    height: 35px;
+    background: #C20C02;
+}
+
+.list-menu {
+    width: 520px;
+    height: 35px;
+    position: absolute;
+    top: 72px;
+    margin: 0;
+    padding: 0;
+    margin-left: -90px;
+}
+
+.menu-item {
+    height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-item li {
+    height: 100%;
+    width: calc(100%/6);
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    line-height: 35px !important;
+    margin: 0;
+    padding: 0;
+}
+
+.tu {
+    width: 0;
+    height: 0;
+    border: solid 10px transparent;
+    border-bottom-color: #f00;
+    z-index: 99;
+    position: absolute;
+    bottom: 0;
+    top: -20px;
+    left: 25px;
+}
+
+.on {
+    background: no-repeat;
+}
+
+.to {
+    height: 570px;
+    margin: 0px;
+    padding: 0;
+}
+
+.contain {
+    width: 100%;
+    height: 1380px;
+    background-color: #F5F5F5;
+    margin-top: -10px;
+}
+
+.container {
+    height: 100%;
+    width: 70%;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.container-menu {
+    width: 100%;
+    height: 40px;
+    padding-top: 55px;
+    border-bottom: 1px solid #C20C02;
+    line-height: 40px;
+}
+
+.container-menu1 {
+    float: left;
+    width: 30%;
+    height: 40px;
+    padding-left: 25px;
+    line-height: 40px;
+}
+
+.container-menu1:hover {
+    color: #f00;
+}
+
+.container-menu2 {
+    float: right;
+    width: 5%;
+    height: 40px;
+    padding-right: 10px;
+    line-height: 40px;
+    font-size: 12px;
+}
+
+.container-menu2:hover {
+    color: #f00;
+}
+
+
+
+.two {
+    position: relative;
+}
+
+
+.zhuti ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.zhuti li {
+    width: 144px;
+    height: 144px;
+    border-radius: 50%;
+}
+
+.zhuti li .two-tu {
+    width: 100%;
+    height: 144px;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.zhuti li .two-tu img {
+    transition: all .4s;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.zhuti li .two-tu img:hover {
+    transform: scale(1.2);
+}
+
+.two-wen {
+    position: relative;
+}
+
+.two-wen .two-one {
+    width: 60px;
+    height: 25px;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    border: 1px solid #e27471;
+    color: #e27471;
+}
+
+.two-wen p {
+    position: absolute;
+    color: #2e2d32;
+    font-size: 14px;
+    left: 54px;
+    top: 0;
+}
+
+.two-wen p:hover {
+    color: #f00;
+}
+
+.three {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+    width: 220px !important;
+    height: 220px !important;
+    border-radius: 20px;
+}
+
+
+
+.zhuti li .three-tu {
+    width: 100%;
+    height: 100%;
+    background-color: #f9f9f9;
+    overflow: hidden;
+}
+
+.zhuti li .three-tu img {
+    transition: all .4s;
+    height: 184px;
+    width: 184px;
+    border-radius: 20px;
+}
+
+.three-wen {
+    position: relative;
+}
+
+.three-wen .three-one {
+    width: 60px;
+    height: 25px;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: center;
+    border: 1px solid #e27471;
+    color: #e27471;
+}
+
+.three-wen p {
+    position: absolute;
+    color: #2e2d32;
+    font-size: 14px;
+    left: -206px;
+    top: 187px;
+}
+
+.three-wen p:hover {
+    color: #f00;
+}
+
+.end {
+    height: 60px;
+    width: 100%;
+    background: #F2F2F2;
+}
+
+.writer {
+    height: 100%;
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 60px;
+}
+
+.to button {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: none;
+    font-size: 40px;
+    background-color: rgb(128, 128, 128, 0.4);
+    z-index: 99;
+    border-radius: 50%;
+}
+
+.to .left {
+    left: 0;
+    top: 46%;
+    color: #fff;
+}
+
+.to .right {
+    right: 0;
+    top: 46%;
+    color: #fff;
+}
