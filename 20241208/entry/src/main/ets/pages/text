@@ -1,0 +1,24 @@
+  // 创建自定义组件的新实例后，在执行其build()函数之前执行
+  aboutToAppear(){
+    console.log("这是执行在build()函数之前")
+  }
+  // 执行自定义组件的build()函数之后执行
+  onDidBuild(){
+    console.log("这是执行在build()函数之后")
+  }
+  // 在自定义组件析构销毁时执行
+  aboutToDisappear(){
+    console.log("这是执行在组件析构销毁时")
+  }
+  // 页面每次显示/隐藏时触发一次，包括路由过程、应用进入前台等场景，仅@Entry装饰的自定义组件生效
+  onPageShow(){
+    console.log("这是执行在页面每次显示")
+  }
+  onPageHide(){
+    console.log("这是执行在页面每次隐藏")
+  }
+  // 当用户点击返回按钮时触发
+  onBackPress(){
+    console.log("这是执行在用户点击返回按钮时")
+  }
+
